@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+    <title>Sten✂påse</title>
+  <link rel="stylesheet" href="stensax.css">
+
+</head>
+<body>
+<h1>Sten, Sax, Påse 👊✌️✋</h1>
+
+<div id="nameInput">
+  <label for="name" id="name-label">Ange ditt namn:</label>
+  <input type="text" id="name">
+  <button id="startButton">Starta spelet</button>
+</div>
+
+<div id="game" style="display: none;">
+  <h2>Spelare: <span id="playerName"></span></h2>
+
+  <div id="score">
+    <p>Spelare: <span id="playerScore">0</span></p>
+    <p>Datorn: <span id="computerScore">0</span></p>
+  </div>
+
+  <div id="choices">
+    <button id="rockButton"><img src="rock.png" alt="Sten"></button>
+    <button id="scissorsButton"><img src="cut.png" alt="Sax"></button>
+    <button id="paperButton"><img src="tote.png" alt="Påse"></button>
+  </div>
+
+  <div id="result" style="display: none;">
+    <h3 id="resultText"></h3>
+    <button id="restartButton">Starta om spelet</button>
+  </div>
+</div>
+
+<script src="stensax.js"></script>
+
+</body>
+</html>
