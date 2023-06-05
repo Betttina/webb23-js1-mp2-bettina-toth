@@ -13,10 +13,24 @@ const resultContainer = document.getElementById("result");
 const resultText = document.getElementById("resultText");
 const restartButton = document.getElementById("restartButton");
 
+const nameForm = document.getElementById("nameForm");
+const playerChoiceElement = document.getElementById("playerChoice");
+const computerChoiceElement = document.getElementById("computerChoice");
+
 // Spelvariabler
 let name = "";
 let playerPoints = 0;
 let computerPoints = 0;
+
+// Lyssna på formuläret för att starta spelet
+nameForm.addEventListener("submit", function (event) {
+  event.preventDefault(); // Förhindra standardformulärinskickning
+  name = nameInput.value;
+  if (name) {
+    playerName.textContent = name;
+    showGameScreen();
+  }
+});
 
 // Vad som visas och inte visas på skärmen
 function showGameScreen() {
@@ -78,17 +92,15 @@ function playRound(playerChoice) {
     scissorsButton.disabled = true;
     paperButton.disabled = true;
     restartButton.style.display = "block";
+    computerChoiceElement.style.display = "none";
+    playerChoiceElement.style.display = "none";
+  } else {
+    playerChoiceElement.textContent = `Spelare: ${playerChoice}`;
+    computerChoiceElement.textContent = `Dator: ${computerChoice}`;
+    playerChoiceElement.style.display = "block";
+    computerChoiceElement.style.display = "block";
   }
 }
-
-// Lyssna på startknappen
-startButton.addEventListener("click", function () {
-  name = nameInput.value;
-  if (name) {
-    playerName.textContent = name;
-    showGameScreen();
-  }
-});
 
 // Lyssna på val av sten
 rockButton.addEventListener("click", function () {
@@ -115,5 +127,11 @@ restartButton.addEventListener("click", function () {
   scissorsButton.disabled = false;
   paperButton.disabled = false;
   showGameScreen();
-
 });
+
+function displayChoices(playerChoice, computerChoice) {
+  playerChoiceElement.textContent = `Spelare: ${playerChoice}`;
+  computerChoiceElement.textContent = `Dator: ${computerChoice}`;
+  playerChoiceElement.style.display = "block";
+  computerChoiceElement.style.display = "block";
+}

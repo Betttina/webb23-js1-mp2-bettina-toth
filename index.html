@@ -10,11 +10,12 @@
 <body>
 <h1>Sten, Sax, Påse 👊✌️✋</h1>
 
-<div id="nameInput">
+<form id="nameForm">
   <label for="name" id="name-label">Ange ditt namn:</label>
   <input type="text" id="name">
-  <button id="startButton">Starta spelet</button>
-</div>
+  <button type="submit" id="startButton">Starta spelet</button>
+</form>
+
 
 <div id="game" style="display: none;">
   <h2>Spelare: <span id="playerName"></span></h2>
@@ -35,6 +36,13 @@
     <button id="restartButton">Starta om spelet</button>
   </div>
 </div>
+
+
+
+
+<div id="playerChoice"></div>
+<div id="computerChoice"></div>
+
 
 <script src="stensax.js"></script>
 

@@ -44,3 +44,8 @@ img {
     height: 200px;
     cursor: pointer;
 }
+
+#playerChoice, #computerChoice
+{
+    display: none;
+}
